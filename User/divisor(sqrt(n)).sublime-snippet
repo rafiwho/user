@@ -1,0 +1,18 @@
+<snippet>
+  <content><![CDATA[
+set<int>div(int n){
+    set<int>st;
+    for (int i = 1; i * i* 1LL <= n; ++i){
+        if (n % i == 0){
+            st.insert(i);
+            st.insert(n / i);
+        }
+    }
+    return st;
+}
+]]></content>
+  <tabTrigger>divisor</tabTrigger>
+  <description>divisor(sqrt(n))</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+   <scope >source.c++</scope >
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+for (int i = 0; i < s.size(); ++i) {
+		sort(s.begin() + i , s.end());
+		int64_t posi = i + nth / fact[s.size() - i - 1];
+		swap(s[i] , s[posi]);
+		nth %= fact[s.size() - i - 1];
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>nth_permutation</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

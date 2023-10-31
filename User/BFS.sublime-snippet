@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+const int N = 1e5 + 10;
+std::vector<int> g[N];
+bool vis[N];
+int level[N];
+void bfs(int source) {
+	queue<int>q;
+	q.push(source);
+	vis[source] = true;
+
+	while (!q.empty()) {
+		int cur_v = q.front();
+		q.pop();
+		for (int child : g[cur_v]) {
+			if (!vis[child]) {
+				q.push(child);
+				vis[child] = true;
+				level[child] = level[cur_v] + 1;
+			}
+		}
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>BFS</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
