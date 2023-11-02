@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+vector<int> Merge(vector<int>&L, vector<int>&R) {
+	vector<int>ans;
+	int i = 0, j = 0;
+	while (i < int(L.size()) && j < int(R.size())) {
+		if (L[i] < R[j]) {
+			ans.push_back(L[i++]);
+		} else {
+			ans.push_back(R[j++]);
+		}
+	}
+	while (i < int(L.size())) {
+		ans.push_back(L[i++]);
+	}
+	while (j < int(R.size())) {
+		ans.push_back(R[j++]);
+	}
+	return ans;
+}
+vector<int> merge_sort(int l , int r, std::vector<int>&v) {
+	if (l == r)return vector<int> {v[l]} ;
+	int mid = (l + r) >> 1;
+	auto L = merge_sort(l, mid, v);
+	auto R = merge_sort(mid + 1, r, v);
+	return Merge(L, R);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>MERGE_SORT</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

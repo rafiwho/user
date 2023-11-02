@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+vector<vector<int>>all_subseq;
+void Subseq(vector<int> &arr,  vector<int> &empty_arr, int n , int index = 0) {
+	if (index == n) {
+		all_subseq.push_back(empty_arr);
+		return;
+	}
+
+	empty_arr.push_back(arr[index]);
+	Subseq(arr, empty_arr, n , index + 1);
+	empty_arr.pop_back();
+	Subseq(arr,  empty_arr, n , index + 1);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>allsubsequence</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,7 @@
+[
+	{ "keys": ["f9"], "command": "build", "args": {"select": true} },
+	{ "keys": ["ctrl+d"], "command": "duplicate_line" },
+	{ "keys": ["ctrl+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+    { "keys": ["escape"], "command": "cancel_build" },
+    { "keys": ["ctrl+k"], "command": "find_under_expand"},
+]	
