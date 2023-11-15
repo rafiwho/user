@@ -1,18 +1,19 @@
 <snippet>
 	<content><![CDATA[
-const int N = 1e3;
-std::vector<std::vector<int>>dp(N, std::vector<int>(N, -1));
-
-int LCS( string &s1 , string &s2, int i = 0, int j = 0) {
-	if (i == int(s1.size()) || j == int(s2.size()))
-		return 0;
-	if (dp[i][j] != -1)
-		return dp[i][j];
-
-	int ans = LCS(s1, s2, i + 1, j);
-	ans = max(ans , LCS(s1, s2, i, j + 1));
-	ans = max(ans , LCS(s1, s2, i + 1, j + 1) + (s1[i] == s2[j]));
-	return dp[i][j] = ans;
+template <typename T>
+int LCS(const T &s1 , const T &s2) {
+	int n = s1.size() , m = s2.size();
+	vector<vector<int>>dp(n + 1, std::vector<int>(m + 1, 0));
+	for (int i = 1; i <= n; ++i) {
+		for (int j = 1; j <= m; ++j) {
+			if (s1[i - 1] == s2[j - 1]) {
+				dp[i][j] = 1 + dp[i - 1][j - 1];
+			} else {
+				dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+			}
+		}
+	}
+	return dp[n][m];
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
