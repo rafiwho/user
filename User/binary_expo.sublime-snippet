@@ -1,14 +1,12 @@
 <snippet>
   <content><![CDATA[
-constexpr int M = 1E9 + 7;
-template <typename T>
-T POW(T a, T b) {
-    T ans = 1;
+int POW(int a, int b , int M) {
+    int ans = 1 % M;
     while (b) {
         if (b & 1) {
-            ans *= 1LL * a % M;
+            ans = 1LL * ans * a % M;
         }
-        a *= 1LL * a % M;
+        a = 1LL * a * a % M;
         b >>= 1;
     }
     return ans;
