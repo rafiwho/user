@@ -1,5 +1,0 @@
-[
-	{ "keys": ["ctrl+d"], "command": "duplicate_line" },
-    { "keys": ["escape"], "command": "cancel_build" },
-    { "keys": ["ctrl+k"], "command": "find_under_expand"},
-]	
