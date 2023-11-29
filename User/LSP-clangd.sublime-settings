@@ -1,7 +1,7 @@
 // Settings in here override those in "LSP-clangd/LSP-clangd.sublime-settings"
 
 {
-	"binary":"auto",
+	"binary":"github",
 	"initializationOptions": {    
 		"clangd.header-insertion": "never",    
 	}
