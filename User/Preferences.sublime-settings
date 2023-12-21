@@ -9,7 +9,9 @@
 		"Vintage",
 	],
 	"update_check": false,
-	"font_size": 12,
+	/*"font_size": 11,*/
 	"save_on_focus_lost": true,
 
+	"index_files": true,
+	"font_size": 11,
 }

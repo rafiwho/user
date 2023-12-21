@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[
-int POW(int a, int b , int M) {
+int p(int a, int b) {
     int ans = 1 % M;
     while (b) {
         if (b & 1) {
